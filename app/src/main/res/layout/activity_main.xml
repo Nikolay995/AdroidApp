@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grey_back"
+    tools:context="com.apps.kondratenko.platizhka.MainActivity">
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TableLayout
+        android:id="@+id/tableLayout5"
+        android:layout_width="363dp"
+        android:layout_height="398dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:foregroundGravity="bottom"
+        android:gravity="center"
+        android:paddingBottom="1dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center"
+            android:paddingTop="1dp">
+
+
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="155dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shadow"
+                android:clickable="true"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/list1"
+                    android:layout_width="270px"
+                    android:layout_height="65dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:src="@drawable/list" />
+
+                <TextView
+                    android:id="@+id/textLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/list1"
+                    android:layout_centerHorizontal="true"
+                    android:elegantTextHeight="false"
+                    android:singleLine="false"
+                    android:text="Мої \nплатежі"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="155dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shadow"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/list2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:src="@drawable/calc2" />
+
+                <TextView
+                    android:id="@+id/textLabel2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:singleLine="false"
+                    android:text="Розрахувати \nплатіж"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_height="124dp"
+            android:gravity="center"
+            android:paddingTop="1dp">
+
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="155dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shadow"
+                android:clickable="true"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/list3"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:src="@drawable/bars" />
+
+                <TextView
+                    android:id="@+id/textLabe3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/list3"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="false"
+                    android:text="Тарифи"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative4"
+                android:layout_width="155dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shadow"
+                android:clickable="true"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/list4"
+                    android:layout_width="180px"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:src="@drawable/send" />
+
+                <TextView
+                    android:id="@+id/textLabel4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:singleLine="false"
+                    android:text="Надіслати \nпоказання "
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:gravity="center"
+            android:paddingTop="1dp">
+
+            <RelativeLayout
+                android:id="@+id/relative5"
+                android:layout_width="155dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shadow"
+                android:clickable="true"
+                android:padding="3dp">
+
+                <ImageView
+                    android:id="@+id/list5"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignEnd="@+id/textLabe5"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:src="@drawable/manual" />
+
+                <TextView
+                    android:id="@+id/textLabe5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list5"
+                    android:layout_centerInParent="true"
+                    android:singleLine="false"
+                    android:text="Інструкція"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative6"
+                android:layout_width="155dp"
+                android:layout_height="115dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/shadow"
+                android:clickable="true"
+                android:padding="8dp"
+                tools:layout_editor_absoluteX="209dp"
+                tools:layout_editor_absoluteY="541dp">
+
+                <ImageView
+                    android:id="@+id/list6"
+                    android:layout_width="130px"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:src="@drawable/more" />
+
+                <TextView
+                    android:id="@+id/textLabel6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/list6"
+                    android:layout_centerInParent="true"
+                    android:singleLine="false"
+                    android:text="Про програму"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="71dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:duplicateParentState="true"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="sans-serif"
+        android:text="ПЛАТІЖКА"
+        android:textColor="#FFFFFF"
+        android:textSize="42sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="8dp"
+        android:text="Швидко! Легко! Зручно!"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout5"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintStart_toStartOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close"
+        tools:layout_editor_absoluteY="16dp"
+        />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/help" />
+
+
+</android.support.constraint.ConstraintLayout>

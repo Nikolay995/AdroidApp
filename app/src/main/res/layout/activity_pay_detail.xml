@@ -1,0 +1,161 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/green_back"
+>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextName"
+        android:layout_alignBottom="@+id/editTextName"
+        android:layout_toLeftOf="@+id/textView4"
+        android:layout_toStartOf="@+id/textView4"
+        android:text="ПІБ"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignEnd="@+id/btnDelete"
+        android:layout_alignRight="@+id/btnDelete"
+        android:layout_marginBottom="28dp"
+        android:text="Група  "
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextstdId"
+        android:layout_alignBottom="@+id/editTextstdId"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:text="ID"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    /* android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:layout_below="@+id/editTextAge"*/
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/editTextgroupId"
+        android:layout_alignStart="@+id/editTextgroupId"
+        android:layout_marginBottom="27dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="Введіть ім'я студента..."
+        android:inputType="textPersonName"
+        android:textColor="#ffffff" />
+    //android:layout_alignParentRight="true"
+    //android:layout_alignParentEnd="true"
+    //android:layout_above="@+id/editTextgroupId"
+    //android:layout_alignLeft="@+id/editTextgroupId"
+    //android:layout_alignStart="@+id/editTextgroupId"
+
+    <EditText
+        android:id="@+id/editTextgroupId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/btnSave"
+        android:layout_alignStart="@+id/btnSave"
+        android:background="@android:color/transparent"
+        android:ems="10"
+        android:hint="Введіть назву групи..."
+        android:inputType="text"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editTextstdId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnSave"
+        android:layout_alignEnd="@+id/editTextgroupId"
+        android:layout_alignRight="@+id/editTextgroupId"
+        android:layout_marginBottom="42dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:backgroundTint="@android:color/transparent"
+        android:ems="10"
+        android:hint="Номер залікової..."
+        android:inputType="text"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="220px"
+        android:background="#33ffffff"
+        android:layout_height="80px"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Зберегти" />
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="220px"
+        android:background="#33ffffff"
+        android:layout_height="80px"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Закрити" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="220px"
+        android:background="#33ffffff"
+        android:layout_height="80px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Видалити" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:foregroundGravity="center_vertical"
+        android:maxHeight="42dp"
+        android:maxWidth="42dp"
+        android:padding="18dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/home_icon" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/textView2"
+        android:paddingBottom="10dp"
+        android:text="Дані про платіж"
+        android:textColor="#ffffff"
+        android:textSize="22dp" />
+
+</RelativeLayout>

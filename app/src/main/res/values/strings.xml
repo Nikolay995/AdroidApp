@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Platizhka</string>
+    <string name="title_activity_data_send">Надіслати показання</string>
+    <string name="title_activity_tariffs">Тарифи</string>
+    <string name="title_activity_about_app">Про програму</string>
+
+    <string name="title_activity_welcome">Платіжка</string>
+
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="dummy_button">Dummy Button</string>
+
+    <string name="title_activity_splash_screen">Splash</string>
+</resources>
