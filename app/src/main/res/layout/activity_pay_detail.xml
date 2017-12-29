@@ -1,40 +1,41 @@
-<RelativeLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/green_back"
+    android:background="@drawable/activity_back"
 >
-
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editTextName"
-        android:layout_alignBottom="@+id/editTextName"
-        android:layout_toLeftOf="@+id/textView4"
-        android:layout_toStartOf="@+id/textView4"
-        android:text="ПІБ"
+        android:layout_below="@+id/textView4"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:text="Платник: "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
-        android:layout_alignEnd="@+id/btnDelete"
-        android:layout_alignRight="@+id/btnDelete"
-        android:layout_marginBottom="28dp"
-        android:text="Група  "
+        android:layout_above="@+id/editTextstdId"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Категорія:   "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="25sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView3"
@@ -44,118 +45,159 @@
         android:layout_alignBottom="@+id/editTextstdId"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:text="ID"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Сума платежу: "
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="25sp"
-        android:textStyle="bold" />
-    /* android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:layout_below="@+id/editTextAge"*/
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView2"
-        android:layout_alignLeft="@+id/editTextgroupId"
-        android:layout_alignStart="@+id/editTextgroupId"
-        android:layout_marginBottom="27dp"
-        android:background="@null"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textView4"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="232dp"
+        android:layout_toEndOf="@id/textView"
         android:ems="10"
-        android:hint="Введіть ім'я студента..."
-        android:inputType="textPersonName"
-        android:textColor="#ffffff" />
-    //android:layout_alignParentRight="true"
-    //android:layout_alignParentEnd="true"
-    //android:layout_above="@+id/editTextgroupId"
-    //android:layout_alignLeft="@+id/editTextgroupId"
-    //android:layout_alignStart="@+id/editTextgroupId"
+        android:hint="Введіть особовий рахунок..."
+        android:inputType="number"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
         android:id="@+id/editTextgroupId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="39dp"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/btnSave"
         android:layout_alignStart="@+id/btnSave"
-        android:background="@android:color/transparent"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
-        android:hint="Введіть назву групи..."
+        android:hint="Оберіть категорію"
         android:inputType="text"
-        android:textColor="#ffffff" />
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
     <EditText
         android:id="@+id/editTextstdId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="156dp"
+        android:layout_height="46dp"
+
         android:layout_above="@+id/btnSave"
-        android:layout_alignEnd="@+id/editTextgroupId"
-        android:layout_alignRight="@+id/editTextgroupId"
-        android:layout_marginBottom="42dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Номер залікової..."
-        android:inputType="text"
-        android:textColor="#ffffff" />
+        android:hint="Введіть суму в гривнях"
+        android:inputType="numberDecimal"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextgroupId" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="220px"
-        android:background="#33ffffff"
         android:layout_height="80px"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Зберегти" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFD700"
+        android:text="Зберегти"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextstdId" />
 
     <Button
         android:id="@+id/btnClose"
         android:layout_width="220px"
-        android:background="#33ffffff"
         android:layout_height="80px"
-
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="Закрити" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFD700"
+        android:text="Закрити"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/btnSave"
+        app:layout_constraintStart_toEndOf="@+id/btnDelete"
+        app:layout_constraintTop_toBottomOf="@+id/editTextstdId"
+        app:layout_constraintVertical_bias="0.333" />
 
     <Button
         android:id="@+id/btnDelete"
         android:layout_width="220px"
-        android:background="#33ffffff"
         android:layout_height="80px"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Видалити" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:foregroundGravity="center_vertical"
-        android:maxHeight="42dp"
-        android:maxWidth="42dp"
-        android:padding="18dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/home_icon" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#FFD700"
+        android:text="Видалити"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextstdId" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="17dp"
-        android:layout_toEndOf="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="1dp"
         android:paddingBottom="10dp"
         android:text="Дані про платіж"
         android:textColor="#ffffff"
-        android:textSize="22dp" />
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="300dp"
+        android:layout_height="240dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/pen" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:layout_margin="16px"
+        android:layout_marginBottom="8dp"
+        android:background="#FFD700"
+        android:text="Довідка"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="137dp" />
+
+</android.support.constraint.ConstraintLayout>
