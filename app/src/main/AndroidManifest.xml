@@ -49,7 +49,7 @@
         <activity android:name=".PayDetail" />
         <activity
             android:name=".Calculate"
-            android:label="@string/title_activity_calculate"
+            android:label="Розрахунок платежу"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
             <meta-data

@@ -123,7 +123,6 @@
         android:layout_margin="6dp"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
-
         android:layout_marginStart="8dp"
         android:background="#f7be00"
         android:text="Довідка"
