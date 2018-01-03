@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.apps.kondratenko.platizhka">
 
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -44,7 +46,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".MyPay" />
-        <activity android:name=".PayDetail"></activity>
+        <activity android:name=".PayDetail" />
+        <activity
+            android:name=".Calculate"
+            android:label="@string/title_activity_calculate"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.apps.kondratenko.platizhka.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

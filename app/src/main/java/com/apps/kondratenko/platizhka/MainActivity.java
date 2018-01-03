@@ -41,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, MyPay.class) );
             }
         });
+        RelativeLayout relative2 = (RelativeLayout) findViewById(R.id.relative2);
+        relative2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, Calculate.class) );
+            }
+        });
 
 
         RelativeLayout relative3 = (RelativeLayout) findViewById(R.id.relative3);

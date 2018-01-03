@@ -20,7 +20,7 @@ public class MyPay extends ListActivity  implements android.view.View.OnClickLis
 
     ImageView btnGetAll;
     ImageView  btnAdd;
-    TextView student_Id;
+    TextView payment_Id;
 
     @Override
     public void onClick(View view) {
@@ -30,20 +30,20 @@ public class MyPay extends ListActivity  implements android.view.View.OnClickLis
             startActivity(intent);
         }else {
             PayRepo repo = new PayRepo(this);
-            ArrayList<HashMap<String, String>> studentList =  repo.getPaymentList();
-            if(studentList.size()!=0) {
+            ArrayList<HashMap<String, String>> paymentList =  repo.getPaymentList();
+            if(paymentList.size()!=0) {
                 ListView lv = getListView();
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                        student_Id = (TextView) view.findViewById(R.id.student_Id);
-                        String studentId = student_Id.getText().toString();
+                        payment_Id = (TextView) view.findViewById(R.id.payment_Id);
+                        String studentId = payment_Id.getText().toString();
                         Intent objIndent = new Intent(getApplicationContext(),PayDetail.class);
-                        objIndent.putExtra("payment_Id", Integer.parseInt( studentId));
+                        objIndent.putExtra("payment_Id", Integer.parseInt(studentId));
                         startActivity(objIndent);
                     }
                 });
-                ListAdapter adapter = new SimpleAdapter( MyPay.this,studentList, R.layout.payment_entry, new String[] { "id","name"}, new int[] {R.id.student_Id, R.id.student_name});
+                ListAdapter adapter = new SimpleAdapter( MyPay.this,paymentList, R.layout.payment_entry, new String[] { "id","name"}, new int[] {R.id.payment_Id, R.id.student_name});
                 setListAdapter(adapter);
             }else{
                 Toast.makeText(this,"Список пустий!",Toast.LENGTH_SHORT).show();

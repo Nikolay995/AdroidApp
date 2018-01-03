@@ -5,11 +5,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
-        android:id="@+id/student_Id"
+        android:id="@+id/payment_Id"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/student_name"
@@ -19,5 +19,4 @@
         android:paddingTop="6dip"
         android:textSize="22sp"
         android:textStyle="bold" />
-
 </LinearLayout>

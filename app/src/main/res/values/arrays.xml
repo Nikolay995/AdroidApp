@@ -3,6 +3,6 @@
     <string-array name="serviceList">
         <item>Газ</item>
         <item>Вода</item>
-        <item>Електроенергія</item>
+        <item>Світло</item>
         </string-array>
 </resources>
