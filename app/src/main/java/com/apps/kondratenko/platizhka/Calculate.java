@@ -11,13 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Calculate extends AppCompatActivity {
     final double priceGas = 6.96;
     final double priceLight = 1.68;
     final double priceWater = 8.22;
-    private double result;
+    private double result = 0.0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,30 +29,47 @@ public class Calculate extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Button btn = findViewById(R.id.buttonCalc);
-        final RadioButton tarif1 = (RadioButton) findViewById(R.id.tarif1);
-        final RadioButton tarif2 = (RadioButton) findViewById(R.id.tarif2);
+        final RadioButton tarif1 = findViewById(R.id.tarif1);
+        final RadioButton tarif2 = findViewById(R.id.tarif2);
+        final RadioButton tarif3 = findViewById(R.id.tarif3);
+        final TextView resultField = findViewById(R.id.textView14);
 
-        final EditText data =  (EditText) findViewById(R.id.editText3);
-        Spinner spn = (Spinner) findViewById(R.id.serviceSpinner);
+        final EditText data =  findViewById(R.id.editText3);
+        final EditText price = findViewById(R.id.editText4);
+
+        price.setVisibility(View.GONE);
+        Spinner spn = findViewById(R.id.serviceSpinner);
         final String spnValue =spn.getSelectedItem().toString();
 
         tarif1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                double input=Double.parseDouble(data.getText().toString());
-                if (spnValue.equals("Газ")){
-                if(tarif1.isChecked()){
-                    tarif2.setEnabled(false);
-                    result = input*priceGas;
-                    Toast.makeText(Calculate.this,""+result, Toast.LENGTH_LONG).show();
-                }else if(tarif2.isChecked()){
-                    tarif1.setEnabled(false);
-                    result = input*priceGas - 0.2*(input*priceGas);
-                    Toast.makeText(Calculate.this,""+result, Toast.LENGTH_LONG).show();
+                tarif2.setChecked(false);
+                tarif3.setChecked(false);
+                price.setVisibility(View.GONE);
+                    Toast.makeText(Calculate.this,"ok1", Toast.LENGTH_LONG).show();
                 }
-
-                }}
         });
 
+        tarif2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                price.setVisibility(View.GONE);
+                //double price2=Double.parseDouble(price.getText().toString()); // ЭТО В КНОПКУ
+                tarif1.setChecked(false);
+                tarif3.setChecked(false);
+                Toast.makeText(Calculate.this,"ok2", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        tarif3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                price.setVisibility(View.VISIBLE);
+                tarif1.setChecked(false);
+                tarif2.setChecked(false);
+                Toast.makeText(Calculate.this,"ok3", Toast.LENGTH_LONG).show();
+
+            }
+        });
 
 
 
@@ -61,7 +79,22 @@ public class Calculate extends AppCompatActivity {
                     data.setError("Введіть спожитий обсяг!");
                     return;
                 }else {
-                    //double input=Double.parseDouble(data.getText().toString());
+                    double input=Double.parseDouble(data.getText().toString());
+                    if (spnValue.equals("Газ")){
+
+                        if(tarif1.isChecked()){
+                            result = input*priceGas;
+                            resultField.setText(result+" грн.");
+                        } else if(tarif2.isChecked()){
+                            result = input*priceGas - 0.2*input*priceGas;
+                            resultField.setText(result+" грн.");
+                        } else if (tarif3.isChecked()){
+                            double inputPrice=Double.parseDouble(price.getText().toString());
+                            result = input * inputPrice;
+                            resultField.setText(result+" грн.");
+                        }
+                    }
+
 
 
                     Toast.makeText(Calculate.this,""+result, Toast.LENGTH_LONG).show();
