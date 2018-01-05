@@ -189,26 +189,26 @@
                 android:layout_margin="10dp"
                 android:background="@drawable/shadow"
                 android:clickable="true"
-                android:padding="3dp">
+                android:padding="10dp">
 
                 <ImageView
                     android:id="@+id/list5"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_alignEnd="@+id/textLabe5"
-                    android:layout_alignParentTop="true"
+                    android:layout_above="@+id/textLabe5"
+                    android:layout_centerHorizontal="true"
                     android:gravity="center"
-                    android:padding="8dp"
-                    android:src="@drawable/manual" />
+                    android:padding="2dp"
+                    android:src="@drawable/tarif" />
 
                 <TextView
                     android:id="@+id/textLabe5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/list5"
-                    android:layout_centerInParent="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
                     android:singleLine="false"
-                    android:text="Інструкція"
+                    android:text="Online-оплата"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="16dp" />

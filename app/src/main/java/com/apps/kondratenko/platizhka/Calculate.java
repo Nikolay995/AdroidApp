@@ -46,7 +46,7 @@ public class Calculate extends AppCompatActivity {
                 tarif2.setChecked(false);
                 tarif3.setChecked(false);
                 price.setVisibility(View.GONE);
-                    Toast.makeText(Calculate.this,"ok1", Toast.LENGTH_LONG).show();
+                resultField.setVisibility(View.GONE);
                 }
         });
 
@@ -54,19 +54,18 @@ public class Calculate extends AppCompatActivity {
             public void onClick(View v) {
 
                 price.setVisibility(View.GONE);
-                //double price2=Double.parseDouble(price.getText().toString()); // ЭТО В КНОПКУ
+                resultField.setVisibility(View.GONE);
                 tarif1.setChecked(false);
                 tarif3.setChecked(false);
-                Toast.makeText(Calculate.this,"ok2", Toast.LENGTH_LONG).show();
             }
         });
 
         tarif3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 price.setVisibility(View.VISIBLE);
+                resultField.setVisibility(View.GONE);
                 tarif1.setChecked(false);
                 tarif2.setChecked(false);
-                Toast.makeText(Calculate.this,"ok3", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -79,9 +78,10 @@ public class Calculate extends AppCompatActivity {
                     data.setError("Введіть спожитий обсяг!");
                     return;
                 }else {
-                    double input=Double.parseDouble(data.getText().toString());
-                    if (spnValue.equals("Газ")){
 
+                    if (spnValue.equals("Газ")){
+                        resultField.setVisibility(View.VISIBLE);
+                        double input=Double.parseDouble(data.getText().toString());
                         if(tarif1.isChecked()){
                             result = input*priceGas;
                             resultField.setText(result+" грн.");
@@ -93,13 +93,38 @@ public class Calculate extends AppCompatActivity {
                             result = input * inputPrice;
                             resultField.setText(result+" грн.");
                         }
-                    }
+                    } if (spnValue.equals("Вода")){
+                        resultField.setVisibility(View.VISIBLE);
+                        double input=Double.parseDouble(data.getText().toString());
 
-
-
-                    Toast.makeText(Calculate.this,""+result, Toast.LENGTH_LONG).show();
-
+                        if(tarif1.isChecked()){
+                            result = input*priceWater;
+                            resultField.setText(result+" грн.");
+                        } else if(tarif2.isChecked()){
+                            result = input*priceWater - 0.2*input*priceWater;
+                            resultField.setText(result+" грн.");
+                        } else if (tarif3.isChecked()){
+                            double inputPrice=Double.parseDouble(price.getText().toString());
+                            result = input * inputPrice;
+                            resultField.setText(result+" грн.");
+                        }
+                    } if (spnValue.equals("Світло")){
+                        resultField.setVisibility(View.VISIBLE);
+                        double input=Double.parseDouble(data.getText().toString());
+                        if(tarif1.isChecked()){
+                            result = input*priceLight;
+                            resultField.setText(result+" грн.\n 2nd row");
+                        } else if(tarif2.isChecked()){
+                            result = input*priceLight - 0.2*input*priceLight;
+                            resultField.setText(result+" грн.");
+                        } else if (tarif3.isChecked()){
+                            double inputPrice=Double.parseDouble(price.getText().toString());
+                            result = input * inputPrice;
+                            resultField.setText(result+" грн.");
+                        }}
                 }}});
+        //        Toast.makeText(Calculate.this,""+result, Toast.LENGTH_LONG).show();
+
 
 
 

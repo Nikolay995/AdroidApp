@@ -65,6 +65,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DataSend.class) );
             }
         });
+        RelativeLayout relative5 = (RelativeLayout) findViewById(R.id.relative5);
+        relative5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, OnlinePay.class) );
+            }
+        });
+
+        RelativeLayout relative6 = (RelativeLayout) findViewById(R.id.relative6);
+        relative6.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, AboutApp.class) );
+            }
+        });
+        iconClose.setOnClickListener(new View.OnClickListener(){
+            @Override
+                    public  void onClick(View v){
+                finish();
+                System.exit(0);
+            }
+
+        });
 
 
 

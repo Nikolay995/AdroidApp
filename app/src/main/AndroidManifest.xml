@@ -3,6 +3,7 @@
     package="com.apps.kondratenko.platizhka">
 
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -56,6 +57,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.apps.kondratenko.platizhka.MainActivity" />
         </activity>
+        <activity android:name=".OnlinePay"></activity>
     </application>
 
 </manifest>
