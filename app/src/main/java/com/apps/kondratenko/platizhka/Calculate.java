@@ -33,13 +33,14 @@ public class Calculate extends AppCompatActivity {
         final RadioButton tarif2 = findViewById(R.id.tarif2);
         final RadioButton tarif3 = findViewById(R.id.tarif3);
         final TextView resultField = findViewById(R.id.textView14);
+        resultField.setVisibility(View.INVISIBLE);
 
         final EditText data =  findViewById(R.id.editText3);
         final EditText price = findViewById(R.id.editText4);
 
         price.setVisibility(View.GONE);
-        Spinner spn = findViewById(R.id.serviceSpinner);
-        final String spnValue =spn.getSelectedItem().toString();
+        final Spinner spn = findViewById(R.id.serviceSpinner);
+
 
         tarif1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -78,55 +79,49 @@ public class Calculate extends AppCompatActivity {
                     data.setError("Введіть спожитий обсяг!");
                     return;
                 }else {
-
+                    final String spnValue =spn.getSelectedItem().toString();
+                    resultField.setVisibility(View.VISIBLE);
+                    double input=Double.parseDouble(data.getText().toString());
                     if (spnValue.equals("Газ")){
-                        resultField.setVisibility(View.VISIBLE);
-                        double input=Double.parseDouble(data.getText().toString());
+
                         if(tarif1.isChecked()){
                             result = input*priceGas;
-                            resultField.setText(result+" грн.");
+                            resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if(tarif2.isChecked()){
                             result = input*priceGas - 0.2*input*priceGas;
-                            resultField.setText(result+" грн.");
+                            resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if (tarif3.isChecked()){
                             double inputPrice=Double.parseDouble(price.getText().toString());
                             result = input * inputPrice;
-                            resultField.setText(result+" грн.");
-                        }
+                            resultField.setText(result+" грн.\nза "+input+"м³");
+                        } else Toast.makeText(Calculate.this,"Оберіть тариф", Toast.LENGTH_SHORT).show();
                     } if (spnValue.equals("Вода")){
-                        resultField.setVisibility(View.VISIBLE);
-                        double input=Double.parseDouble(data.getText().toString());
 
                         if(tarif1.isChecked()){
                             result = input*priceWater;
-                            resultField.setText(result+" грн.");
+                            resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if(tarif2.isChecked()){
                             result = input*priceWater - 0.2*input*priceWater;
-                            resultField.setText(result+" грн.");
+                            resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if (tarif3.isChecked()){
                             double inputPrice=Double.parseDouble(price.getText().toString());
                             result = input * inputPrice;
-                            resultField.setText(result+" грн.");
-                        }
+                            resultField.setText(result+" грн.\nза "+input+"м³");
+                        } else Toast.makeText(Calculate.this,"Оберіть тариф", Toast.LENGTH_SHORT).show();
                     } if (spnValue.equals("Світло")){
-                        resultField.setVisibility(View.VISIBLE);
-                        double input=Double.parseDouble(data.getText().toString());
+
                         if(tarif1.isChecked()){
                             result = input*priceLight;
-                            resultField.setText(result+" грн.\n 2nd row");
+                            resultField.setText(result+" грн.\nза "+input+" кВт⋅год");
                         } else if(tarif2.isChecked()){
                             result = input*priceLight - 0.2*input*priceLight;
-                            resultField.setText(result+" грн.");
+                            resultField.setText(result+" грн.\nза "+input+" кВт⋅год");
                         } else if (tarif3.isChecked()){
                             double inputPrice=Double.parseDouble(price.getText().toString());
                             result = input * inputPrice;
-                            resultField.setText(result+" грн.");
-                        }}
+                            resultField.setText(result+" грн.\nза "+input+" кВт⋅год");
+                        } else Toast.makeText(Calculate.this,"Оберіть тариф", Toast.LENGTH_SHORT).show();
+                    }
                 }}});
-        //        Toast.makeText(Calculate.this,""+result, Toast.LENGTH_LONG).show();
-
-
-
-
 
 }}

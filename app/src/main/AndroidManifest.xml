@@ -30,15 +30,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.apps.kondratenko.platizhka.MainActivity" />
         </activity>
-        <activity
-            android:name=".AboutApp"
-            android:label="@string/title_activity_about_app"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.apps.kondratenko.platizhka.MainActivity" />
-        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,7 +48,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.apps.kondratenko.platizhka.MainActivity" />
         </activity>
-        <activity android:name=".OnlinePay"></activity>
+        <activity android:name=".OnlinePay" />
+        <activity android:name=".AboutApp"></activity>
     </application>
 
 </manifest>
