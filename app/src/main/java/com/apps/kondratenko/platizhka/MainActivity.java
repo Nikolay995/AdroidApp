@@ -89,6 +89,13 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        iconAbout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View v){
+                startActivity(new Intent(MainActivity.this, AboutApp.class) );
+            }
+        });
+
 
 
     }

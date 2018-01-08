@@ -23,8 +23,9 @@ public class DBHelper  extends SQLiteOpenHelper {
         String CREATE_TABLE_PAYMENT = "CREATE TABLE " +Payment.TABLE  + "("
                 + Payment.KEY_ID  + " INTEGER PRIMARY KEY AUTOINCREMENT ,"
                 + Payment.KEY_name + " TEXT, "
-                + Payment.KEY_stdId + " INTEGER, "
+                + Payment.KEY_stdId + " TEXT, "
                 + Payment.KEY_groupId + " TEXT )";
+
         db.execSQL(CREATE_TABLE_PAYMENT);
     }
 

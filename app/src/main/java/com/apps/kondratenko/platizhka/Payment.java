@@ -19,5 +19,5 @@ public class Payment {
     public int payment_ID;
     public String name;
     public String groupId;
-    public int stdId;
+    public String stdId;
 }

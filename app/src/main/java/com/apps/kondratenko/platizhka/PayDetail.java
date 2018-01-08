@@ -36,9 +36,6 @@ public class PayDetail extends AppCompatActivity implements android.view.View.On
         editTextgroupId = (EditText) findViewById(R.id.editTextgroupId);
         editTextstdId = (EditText) findViewById(R.id.editTextstdId);
 
-
-
-
         btnSave.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
         btnClose.setOnClickListener(this);
@@ -62,7 +59,7 @@ public class PayDetail extends AppCompatActivity implements android.view.View.On
         if (view == findViewById(R.id.btnSave)){
             PayRepo repo = new PayRepo(this);
             Payment payment = new Payment();
-            payment.stdId= Integer.parseInt(editTextstdId.getText().toString());
+            payment.stdId= editTextstdId.getText().toString();
             payment.groupId=editTextgroupId.getText().toString();
             payment.name=editTextName.getText().toString();
             payment.payment_ID=_Payment_Id;

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Platizhka</string>
+    <string name="app_name">Платіжка</string>
     <string name="title_activity_data_send">Надіслати показання</string>
     <string name="title_activity_tariffs">Тарифи</string>
     <string name="title_activity_about_app">Про програму</string>

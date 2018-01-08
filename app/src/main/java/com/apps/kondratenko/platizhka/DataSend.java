@@ -31,16 +31,13 @@ public class DataSend extends AppCompatActivity {
         setSupportActionBar(toolbar);
         final EditText account = findViewById(R.id.editText);
         final EditText counter = findViewById(R.id.editText2);
-        final Spinner spn = findViewById(R.id.serviceSpinner);
+        final Spinner spn = findViewById(R.id.spinner);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        Button infoButton =(Button) findViewById(R.id.button2);
         Button btn = findViewById(R.id.button);
         final String sendGasNumber = "7104";
         final String sendLightNumber = "+380674606077";
         final String sendWaterNumer = "+380483123486";
-        final String sendTESTNumber = "+380682361835";
-// НАЧАЛО
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -51,28 +48,34 @@ public class DataSend extends AppCompatActivity {
                     counter.setError("Введіть показання!");
                     return;
                 } else {
-
-                    final String spnValue =spn.getSelectedItem().toString();
+                    final String spnValue1 =spn.getSelectedItem().toString();
                     String strAccount = account.getEditableText().toString();
                     String strCounter = counter.getText().toString();
-                    if (spnValue.equals("Газ")) {
+                    if (spnValue1.equals("Газ")) {
                         String messageGas = strAccount + " " + strCounter;
                         Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + sendGasNumber));
                         smsIntent.putExtra("sms_body", messageGas);
                         startActivity(smsIntent);
-                    } else if (spnValue.equals("Вода")) {
+                    } else if (spnValue1.equals("Вода")) {
                         final String messageWater = strAccount + " " + strCounter;
                         Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + sendWaterNumer));
                         smsIntent.putExtra("sms_body", messageWater);
                         startActivity(smsIntent);
-                    } else if (spnValue.equals("Світло")) {
+                    } else if (spnValue1.equals("Світло")) {
                         final String messageLight = "1*" + strAccount + "*" + strCounter;
                         Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:" + sendLightNumber));
                         smsIntent.putExtra("sms_body", messageLight);
                         startActivity(smsIntent);
                     }
                 }
-            }});}
+            }});
+
+        infoButton.setOnClickListener(new View.OnClickListener(){
+            public  void onClick(View v){
+                startActivity(new Intent(DataSend.this, AboutApp.class) );
+            }
+        });
+    }
 
 
 

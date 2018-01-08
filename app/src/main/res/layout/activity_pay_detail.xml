@@ -14,7 +14,7 @@
         android:layout_below="@+id/textView4"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="Платник: "
+        android:text="Показники: "
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textSize="25sp"
@@ -58,20 +58,17 @@
 
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="225dp"
+        android:layout_width="186dp"
         android:layout_height="50dp"
         android:layout_below="@+id/textView4"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_toEndOf="@id/textView"
         android:ems="10"
-        android:hint="Введіть особовий рахунок..."
-        android:inputType="number"
-        android:maxLength="10"
+        android:hint="Поточні показники"
+        android:inputType="text"
+        android:maxLength="16"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
@@ -87,6 +84,7 @@
         android:ems="10"
         android:hint="Оберіть категорію"
         android:inputType="text"
+        android:maxLength="16"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextName" />
@@ -95,7 +93,7 @@
         android:id="@+id/editTextstdId"
         android:layout_width="156dp"
         android:layout_height="46dp"
-        android:maxLength="6"
+        android:maxLength="12"
         android:layout_above="@+id/btnSave"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="16dp"
@@ -103,7 +101,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Введіть суму в гривнях"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView3"
@@ -170,7 +168,7 @@
         android:paddingBottom="10dp"
         android:text="Дані про платіж"
         android:textColor="#ffffff"
-        android:textSize="32dp"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

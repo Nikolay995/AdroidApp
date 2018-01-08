@@ -7,21 +7,31 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.apps.kondratenko.platizhka.Calculate"
-    tools:showIn="@layout/activity_calculate2">
+    tools:showIn="@layout/activity_calculate2" >
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="364dp"
+        android:layout_height="462dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/card2"
+        android:layout_margin="10dp"/>
 
     <Spinner
         android:id="@+id/serviceSpinner"
-        android:layout_width="0dp"
+        android:layout_width="136dp"
         android:layout_height="37dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="59dp"
         android:entries="@array/serviceList"
         android:gravity="center"
         android:textAlignment="center"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -29,9 +39,9 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:text="②  Спожитий обсяг:"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:text="②  Спожито:"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +56,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="#f7be00"
-        android:text="РОЗРАХУВАТИ ПЛАТІЖ"
+        android:text="РОЗРАХУВАТИ СУМУ ПЛАТЕЖУ"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,7 +66,7 @@
         android:id="@+id/editText3"
         android:layout_width="89dp"
         android:layout_height="39dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="36dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:gravity="center"
@@ -64,6 +74,7 @@
         android:inputType="number"
         android:maxLength="4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/serviceSpinner" />
 
@@ -86,9 +97,9 @@
         android:id="@+id/tarif1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Стандартний"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Стандарт"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -98,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Пільговий (-20%)"
         app:layout_constraintEnd_toStartOf="@+id/tarif3"
         app:layout_constraintStart_toEndOf="@+id/tarif1"
@@ -108,8 +119,8 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="60dp"
         android:text="①  Категорія:"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -136,10 +147,10 @@
         android:id="@+id/tarif3"
         android:layout_width="73dp"
         android:layout_height="33dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
         android:text="Інший"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView12"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
@@ -158,6 +169,8 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tarif2" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>

@@ -66,8 +66,9 @@ public class PayRepo {
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> payment = new HashMap<String, String>();
-                payment.put("id", cursor.getString(cursor.getColumnIndex(Payment.KEY_ID)));
-                payment.put("name", cursor.getString(cursor.getColumnIndex(Payment.KEY_name)));
+                payment.put("id", cursor.getString(cursor.getColumnIndex(Payment.KEY_name)));
+                payment.put("summ", cursor.getString(cursor.getColumnIndex(Payment.KEY_stdId)));
+                payment.put("name", cursor.getString(cursor.getColumnIndex(Payment.KEY_groupId)));
                 paymentList.add(payment);
 
             } while (cursor.moveToNext());
@@ -97,7 +98,7 @@ public class PayRepo {
                 payment.payment_ID =cursor.getInt(cursor.getColumnIndex(Payment.KEY_ID));
                 payment.name =cursor.getString(cursor.getColumnIndex(Payment.KEY_name));
                 payment.groupId  =cursor.getString(cursor.getColumnIndex(Payment.KEY_groupId));
-                payment.stdId =cursor.getInt(cursor.getColumnIndex(Payment.KEY_stdId));
+                payment.stdId =cursor.getString(cursor.getColumnIndex(Payment.KEY_stdId));
             } while (cursor.moveToNext());
         }
         cursor.close();
