@@ -50,7 +50,6 @@ public class MyPay extends ListActivity  implements android.view.View.OnClickLis
             }
         }
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,8 +60,5 @@ public class MyPay extends ListActivity  implements android.view.View.OnClickLis
 
         btnGetAll = findViewById(R.id.btnGetAll);
         btnGetAll.setOnClickListener(this);
-
     }
-
-
 }

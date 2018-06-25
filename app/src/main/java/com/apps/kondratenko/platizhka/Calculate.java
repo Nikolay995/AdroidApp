@@ -15,15 +15,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Calculate extends AppCompatActivity {
-    final double priceGas = 6.96;
+    final double priceGas = 6.96;       //немножко хардкода
     final double priceLight = 1.68;
     final double priceWater = 8.22;
     private double result = 0.0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -40,7 +42,6 @@ public class Calculate extends AppCompatActivity {
 
         price.setVisibility(View.GONE);
         final Spinner spn = findViewById(R.id.serviceSpinner);
-
 
         tarif1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -71,8 +72,6 @@ public class Calculate extends AppCompatActivity {
             }
         });
 
-
-
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(TextUtils.isEmpty(data.getText()) ){
@@ -82,39 +81,40 @@ public class Calculate extends AppCompatActivity {
                     final String spnValue =spn.getSelectedItem().toString();
                     resultField.setVisibility(View.VISIBLE);
                     double input=Double.parseDouble(data.getText().toString());
-                    if (spnValue.equals("Газ")){
-
+                    if (spnValue.equals("Газ")){                        // дальше - жесть, уберите детей от экрана
                         if(tarif1.isChecked()){
                             result = input*priceGas;
                             resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if(tarif2.isChecked()){
-                            result = input*priceGas - 0.2*input*priceGas;
+                            result = (input*priceGas)/2;
                             resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if (tarif3.isChecked()){
                             double inputPrice=Double.parseDouble(price.getText().toString());
                             result = input * inputPrice;
                             resultField.setText(result+" грн.\nза "+input+"м³");
                         } else Toast.makeText(Calculate.this,"Оберіть тариф", Toast.LENGTH_SHORT).show();
+
                     } if (spnValue.equals("Вода")){
 
                         if(tarif1.isChecked()){
                             result = input*priceWater;
                             resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if(tarif2.isChecked()){
-                            result = input*priceWater - 0.2*input*priceWater;
+                            result = (input*priceWater)/2;
                             resultField.setText(result+" грн.\nза "+input+"м³");
                         } else if (tarif3.isChecked()){
                             double inputPrice=Double.parseDouble(price.getText().toString());
                             result = input * inputPrice;
                             resultField.setText(result+" грн.\nза "+input+"м³");
                         } else Toast.makeText(Calculate.this,"Оберіть тариф", Toast.LENGTH_SHORT).show();
+
                     } if (spnValue.equals("Світло")){
 
                         if(tarif1.isChecked()){
                             result = input*priceLight;
                             resultField.setText(result+" грн.\nза "+input+" кВт⋅год");
                         } else if(tarif2.isChecked()){
-                            result = input*priceLight - 0.2*input*priceLight;
+                            result = (input*priceLight)/2;
                             resultField.setText(result+" грн.\nза "+input+" кВт⋅год");
                         } else if (tarif3.isChecked()){
                             double inputPrice=Double.parseDouble(price.getText().toString());

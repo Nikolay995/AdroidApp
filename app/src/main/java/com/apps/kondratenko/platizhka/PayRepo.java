@@ -1,14 +1,9 @@
 package com.apps.kondratenko.platizhka;
 
-/**
- * Created by strik on 18.12.2017.
- */
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
         import android.content.ContentValues;
-        import android.content.Context;
         import android.database.Cursor;
         import android.database.sqlite.SQLiteDatabase;
         import java.util.ArrayList;
@@ -59,10 +54,8 @@ public class PayRepo {
                 Payment.KEY_groupId + "," +
                 Payment.KEY_stdId +
                 " FROM " + Payment.TABLE;
-        //Student student = new Student();
         ArrayList<HashMap<String, String>> paymentList = new ArrayList<HashMap<String, String>>();
         Cursor cursor = db.rawQuery(selectQuery, null);
-        // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
             do {
                 HashMap<String, String> payment = new HashMap<String, String>();
@@ -73,7 +66,6 @@ public class PayRepo {
 
             } while (cursor.moveToNext());
         }
-
         cursor.close();
         db.close();
         return paymentList;
@@ -90,7 +82,6 @@ public class PayRepo {
                 + " WHERE " +
                 Payment.KEY_ID + "=?";
 
-        int iCount =0;
         Payment payment = new Payment();
         Cursor cursor = db.rawQuery(selectQuery, new String[] { String.valueOf(Id) } );
         if (cursor.moveToFirst()) {
@@ -105,5 +96,4 @@ public class PayRepo {
         db.close();
         return payment;
     }
-
 }

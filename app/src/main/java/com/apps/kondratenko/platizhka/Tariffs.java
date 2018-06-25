@@ -21,10 +21,10 @@ public class Tariffs extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tariffs);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,13 +34,10 @@ public class Tariffs extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         String[] service = {"Електроенергія", "Опалення","Холодна вода", "Гаряча вода", "Газ"};
         ListAdapter serviceList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, service);
         ListView list = findViewById(R.id.listView);
         list.setAdapter(serviceList);
-
-
         list.setOnItemClickListener(
 
                 new AdapterView.OnItemClickListener() {
@@ -71,7 +68,5 @@ public class Tariffs extends AppCompatActivity {
                         }
                 }}
         );
-
     }
-
 }

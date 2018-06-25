@@ -5,14 +5,10 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 
 public class PayDetail extends AppCompatActivity implements android.view.View.OnClickListener{
 
@@ -28,13 +24,13 @@ public class PayDetail extends AppCompatActivity implements android.view.View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pay_detail);
 
-        btnSave = (Button) findViewById(R.id.btnSave);
-        btnDelete = (Button) findViewById(R.id.btnDelete);
-        btnClose = (Button) findViewById(R.id.btnClose);
+        btnSave = findViewById(R.id.btnSave);
+        btnDelete =  findViewById(R.id.btnDelete);
+        btnClose =  findViewById(R.id.btnClose);
 
-        editTextName = (EditText) findViewById(R.id.editTextName);
-        editTextgroupId = (EditText) findViewById(R.id.editTextgroupId);
-        editTextstdId = (EditText) findViewById(R.id.editTextstdId);
+        editTextName =  findViewById(R.id.editTextName);
+        editTextgroupId = findViewById(R.id.editTextgroupId);
+        editTextstdId =  findViewById(R.id.editTextstdId);
 
         btnSave.setOnClickListener(this);
         btnDelete.setOnClickListener(this);
@@ -45,15 +41,13 @@ public class PayDetail extends AppCompatActivity implements android.view.View.On
         Intent intent = getIntent();
         _Payment_Id =intent.getIntExtra("payment_Id", 0);
         PayRepo repo = new PayRepo(this);
-        Payment payment = new Payment();
+        Payment payment;
         payment = repo.getPaymentById(_Payment_Id);
 
         editTextstdId.setText(String.valueOf(payment.stdId));
         editTextName.setText(payment.name);
         editTextgroupId.setText(payment.groupId);
     }
-
-
 
     public void onClick(View view) {
         if (view == findViewById(R.id.btnSave)){
